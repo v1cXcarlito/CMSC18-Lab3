@@ -17,11 +17,12 @@ int main(){
     // The atol function is used to convert the character string into a long value
     long int upc = atol(upc_str);
     
-    int counter = 0;
+    // Loop: while upc is not 0
+    int counter = 1;
     while(upc != 0){
         remainder = upc % 10;
         // firstSum adding odd numbers
-        if((counter+1) % 2 != 0){
+        if((counter) % 2 != 0){
             firstSum = firstSum + remainder;
         }
         // secondSum adding even numbers
