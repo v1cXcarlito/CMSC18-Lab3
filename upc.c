@@ -17,7 +17,10 @@ int main(){
     // The atol function is used to convert the character string into a long value
     long int upc = atol(upc_str);
     
-    // Loop: while upc is not 0
+    // This loop with get the digits individually and add them separately for odd and even
+    // The remainder variable will continuously get the remainder (separated digits) 1234 = 1, 2, 3, 4
+    // firstSum variable will add all the odd number positions based on the counter
+    // secondSum variable will add all the even number positions based on the counter
     int counter = 1;
     while(upc != 0){
         remainder = upc % 10;
@@ -29,10 +32,12 @@ int main(){
         else{
             secondSum = secondSum + remainder;
         }
+        // upc will continuosly divide by 10 to go to the next number in position until upc will be 0 <--
         upc = upc / 10;
+        // counter is to determine the odd and even position of each number
         counter += 1;
     }
-
+    // Check digit formula
     total = (firstSum * 3) + secondSum;
     total = total - 1;
     total = total % 10;
